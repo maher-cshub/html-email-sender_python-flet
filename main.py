@@ -1,20 +1,27 @@
-import flet as ft
+from flet import * ## app, Page, AppBar,Text,IconButton,colors,icons,WEB_BROWSER,Container,animation,UserControl
+from simple_sender import  Simple_Sender
+from App_Layout import set_layout
+from Simple_Send_Page import Simple_Send_Page
+from Bulk_Send_Page import Bulk_Send_Page
 
 
-def main(page: ft.Page):
-    def check_item_clicked(e):
-        e.control.checked = not e.control.checked
-        page.update()
 
-    page.appbar = ft.AppBar(
-        leading_width=40,
-        title=ft.Text("HTML Email Sender"),
-        center_title=False,
-        bgcolor=ft.colors.CYAN_300,
-        actions=[
-            ft.IconButton(ft.icons.WB_SUNNY_OUTLINED),
-        ],
+
+def main(page: Page):
+    set_layout(page)
+    
+    
+
+    page.add(
+        Container(
+            content=Column([
+                Simple_Send_Page(page),
+                
+            ])
+        )
     )
-    page.add(ft.Text("Body!"))
+    
 
-ft.app(port=8550, target=main, view=ft.WEB_BROWSER)
+
+
+app(port=8550, target=main, view=WEB_BROWSER)
