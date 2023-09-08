@@ -1,4 +1,6 @@
 venv
 
 uploads/*
+
 secret_file.py
+
