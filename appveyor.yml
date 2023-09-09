@@ -11,6 +11,7 @@ environment:
     secure: onglD97GHGHEFNmKHo6VPZz/d48RNGIf//p/zSHNo642mdrFsY5eHak4UprjfsBV
 
 install:
+- pip install --upgrade pip
 - pip install -r requirements.txt
 
 build_script:
